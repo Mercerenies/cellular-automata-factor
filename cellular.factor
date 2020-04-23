@@ -1,7 +1,9 @@
 
-USING: io ;
+USING: io cellular.rule cellular.ui ui kernel ;
 IN: cellular
 
-: main ( -- ) "Hello World!" print ;
+: run-in-console ( rule width height -- )
+    print-table ;
 
-MAIN: main
+: run-in-gui ( rule width height -- )
+    [ show-ui ] 3curry with-ui ;
